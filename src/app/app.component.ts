@@ -10,11 +10,15 @@ export class AppComponent {
 
   fileNames: string[] = [];
 
-  fileMode: boolean = false;
+  showExt: boolean = false;
 
   onFileChange(event: any): void {
     this.fileNames = [...event.target.files].map((file: File) =>
-      file.name.replace(/\.[^/.]+$/, "")
+      this.showExt ? file.name : file.name.replace(/\.[^/.]+$/, "")
     )
+  }
+
+  onExtChange(event: any): void {
+    this.showExt = event.target.checked;
   }
 }

@@ -1,3 +1,9 @@
-<input type="file" multiple (change)="onFileChange($event)" />
+<div style="padding-bottom: 18px">
+    <input type="file" multiple (change)="onFileChange($event)" />
+    <label>
+        <input type="checkbox" (change)="onExtChange($event)" [checked]="showExt" />
+        Show Extensions
+    </label>
+</div>
 <br />
 <div *ngFor="let name of fileNames">{{name}}</div>
