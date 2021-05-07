@@ -1,0 +1,19 @@
+.options {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 12px;
+    height: 160px;
+}
+
+.title {
+    align-self: center;
+}
+
+input {
+    padding: 6px 4px;
+}

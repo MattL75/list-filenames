@@ -1,9 +1,17 @@
-<div style="padding-bottom: 18px">
-    <input type="file" multiple (change)="onFileChange($event)" />
+<div class="options">
+    <span class="title">Options</span>
+    <input type="text" (change)="onPrefix($event)" placeholder="Prefix" />
+    <input type="text" (change)="onSuffix($event)" placeholder="Suffix" />
+    <div>
+        <input type="text" (change)="replaceFn($event)" placeholder="Replace this" style="margin-right: 4px;">
+        <input type="text" (change)="replaceWithFn($event)" placeholder="with this">
+    </div>
     <label>
         <input type="checkbox" (change)="onExtChange($event)" [checked]="showExt" />
         Show Extensions
     </label>
 </div>
-<br />
+1. Select your options in the top right corner.<br />
+2. Pick your files by clicking the button.<br />
+<input type="file" multiple (change)="onFileChange($event)" style="margin: 16px 0;" />
 <div *ngFor="let name of fileNames">{{name}}</div>
